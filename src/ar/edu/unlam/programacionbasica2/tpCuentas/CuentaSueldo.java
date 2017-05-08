@@ -1,11 +1,15 @@
-package com.edu.unlam.programacionbasica2.tpcuentas;
+package ar.edu.unlam.programacionbasica2.tpCuentas;
 
 public class CuentaSueldo {
 	protected Double saldo;
 
-	public CuentaSueldo()
+	public CuentaSueldo(Double saldo)
 	{
-		this.saldo = 0.0;
+		this.saldo = saldo;
+	}
+	
+	public CuentaSueldo() {
+		this.saldo = 0.00;
 	}
 	
 	public Double getSaldo()
@@ -20,9 +24,9 @@ public class CuentaSueldo {
 	
 	public Boolean extraerSaldo(Double saldo)
 	{
-		if (saldo > this.saldo)
+		if (saldo > this.saldo) {
 			return false;
-		
+		}
 		this.saldo-=saldo;
 		return true;
 	}
