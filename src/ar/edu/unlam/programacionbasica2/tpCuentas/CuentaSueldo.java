@@ -3,31 +3,25 @@ package ar.edu.unlam.programacionbasica2.tpCuentas;
 public class CuentaSueldo {
 	protected Double saldo;
 
-	public CuentaSueldo(Double saldo)
-	{
-		this.saldo = saldo;
+	public CuentaSueldo (Double monto) {
+		this.saldo = monto;
 	}
 	
-	public CuentaSueldo() {
+	public CuentaSueldo () {
 		this.saldo = 0.00;
 	}
 	
-	public Double getSaldo()
-	{
+	public Double getSaldo () {
 		return this.saldo;
 	}
 	
-	public void setSaldo(Double saldo)
-	{
-		this.saldo = saldo;
+	public void setSaldo (Double monto) {
+		this.saldo = monto;
 	}
 	
-	public Boolean extraerSaldo(Double saldo)
-	{
-		if (saldo > this.saldo) {
-			return false;
+	public void extraerMonto (Double monto) {
+		if (monto <= this.saldo) {
+			this.saldo -= monto;
 		}
-		this.saldo-=saldo;
-		return true;
 	}
 }

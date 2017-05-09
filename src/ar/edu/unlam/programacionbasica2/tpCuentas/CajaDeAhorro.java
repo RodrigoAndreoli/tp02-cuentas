@@ -2,39 +2,18 @@ package ar.edu.unlam.programacionbasica2.tpCuentas;
 
 public class CajaDeAhorro extends CuentaSueldo {
 	protected Integer cantExtracciones;
-	final Double CARGO_POR_EXTRACCION = 6.00;
+	final Double CARGO_EXTRACCION = 6.00;
 	
-	public CajaDeAhorro(Double saldo)
-		{
-			super(saldo);
+	public CajaDeAhorro (Double monto) {
+			super(monto);
 			this.cantExtracciones = 0;
 		}
-		
-		@Override
-		public Boolean extraerSaldo(Double saldo)
-		{
-			cantExtracciones ++;
-			if (cantExtracciones == 5)
-			{
-				if (saldo > (this.saldo-CARGO_POR_EXTRACCION)) 
-				{
-					return false;
-				} else 
-				{
-					this.saldo -= saldo + CARGO_POR_EXTRACCION;
-					cantExtracciones = 0;
-					return true;
-				}
-			} else 
-			{
-				if (saldo > this.saldo) 
-				{
-					return false;
-				} else 
-				{
-					this.saldo -= saldo;
-					return true;
-				}
-			}
+	
+	public void extraerMonto (Double monto) {
+		this.cantExtracciones ++;
+		if (this.cantExtracciones == 5) {
+			monto += this.CARGO_EXTRACCION;
 		}
+		super.extraerMonto(monto);
+	}
 }

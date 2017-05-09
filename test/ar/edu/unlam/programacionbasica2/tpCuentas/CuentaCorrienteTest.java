@@ -16,7 +16,7 @@ public class CuentaCorrienteTest {
 	@Test
 	public void testAlDescubierto () {
 		CuentaCorriente miCuenta = new CuentaCorriente (5000.00);
-		miCuenta.extraerSaldo(5020.00);
+		miCuenta.extraerMonto(5020.00);
 		Double valorObtenido = miCuenta.getSaldo();
 		Double valorEsperado = -21.00;
 		Assert.assertEquals(valorEsperado, valorObtenido);

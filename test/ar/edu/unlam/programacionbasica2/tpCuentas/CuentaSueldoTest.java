@@ -9,8 +9,9 @@ public class CuentaSueldoTest {
 	public void testDeCuentaSaldo () {
 		CuentaSueldo cuenta1 = new CuentaSueldo ();
 		cuenta1.setSaldo(10.00);
-		Boolean valorEsperado = true;
-		Boolean valorObtenido = cuenta1.extraerSaldo(10.00);
+		cuenta1.extraerMonto(10.00);
+		Double valorEsperado = 0.00;
+		Double valorObtenido = cuenta1.getSaldo();
 		Assert.assertEquals(valorEsperado, valorObtenido);
 	}
 	
